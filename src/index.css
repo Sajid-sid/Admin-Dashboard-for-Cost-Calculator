@@ -1,0 +1,5 @@
+/* Basic reset and root styles */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; }
+body { font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial; background: #f5f6f8; color: #333; }
+a { color: inherit; }

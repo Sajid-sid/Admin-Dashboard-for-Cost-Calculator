@@ -1,0 +1,365 @@
+/* ----- Layout ----- */
+.dashboard {
+  display: flex;
+  height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f5f6f8;
+  color: #333;
+}
+
+
+/* --- Sidebar collapse styles --- */
+
+.sidebar {
+  width: 220px;
+  background-color: #1e2a38;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+  align-items: center;
+}
+
+.sidebar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.menu-btn:hover {
+  transform: scale(1.1);
+}
+
+.sidebar.collapsed .logo span {
+  display: none;
+}
+
+.sidebar.collapsed .nav-item {
+  text-align: center;
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.sidebar.collapsed .nav-item span {
+  display: none;
+}
+
+.sidebar.collapsed .nav-item {
+  font-size: 18px;
+}
+
+
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 35px;
+  margin-right: 10px;
+}
+
+.nav-item {
+  display: block;
+  padding: 12px 10px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: background 0.3s;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background-color: #314357;
+}
+
+/* ----- Topbar ----- */
+.topbar {
+  background: white;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.topbar h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.topbar p {
+  font-size: 13px;
+  color: #666;
+}
+
+.admin-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* ----- Main Content ----- */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 20px 30px;
+}
+
+.overview-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* ----- Cards ----- */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  flex: 1;
+  min-width: 230px;
+}
+
+.card-red {
+  border: 2px solid #ffb3b3;
+  background: #ffe6e6;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-value {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.card-footer {
+  font-size: 13px;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* ----- Table ----- */
+.table-container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.table-header input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 250px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding: 10px;
+  background: #f5f5f5;
+  font-weight: 600;
+  color: #333;
+}
+
+td {
+  padding: 10px;
+  border-top: 1px solid #eee;
+}
+
+.no-records {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .cards-container {
+    flex-direction: column;
+  }
+}
+/* ----- Responsive (Mobile & Tablet) ----- */
+@media (max-width: 1024px) {
+  .dashboard {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 180px;
+  }
+}
+
+/* ------- MOBILE VIEW -------- */
+@media (max-width: 768px) {
+
+  /* Dashboard Stack */
+  .dashboard {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* Sidebar becomes mobile drawer */
+  .sidebar {
+    position: fixed;
+    left: -220px;
+    top: 0;
+    height: 100%;
+    width: 220px;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  /* When sidebar is open */
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* Collapse button always visible */
+  .menu-btn {
+    position: absolute;
+    right: -50px;
+    top: 15px;
+    background: #1e2a38;
+    padding: 8px;
+    border-radius: 6px;
+  }
+
+  /* Main section shifts down */
+  .main {
+    margin-top: 70px;
+  }
+
+  /* Topbar smaller */
+  .topbar {
+    padding: 12px 20px;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  /* Content padding */
+  .content {
+    padding: 15px 20px;
+  }
+
+  /* Cards go single-column */
+  .cards-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Table container full width */
+  .table-container {
+    padding: 15px;
+  }
+
+  /* Table becomes scrollable */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    padding: 8px 12px;
+  }
+}
+
+/* ----- Small Phones (max-width: 480px) ----- */
+@media (max-width: 480px) {
+  
+  .logo {
+    font-size: 18px;
+  }
+
+  .card-value {
+    font-size: 24px;
+  }
+
+  .table-header input {
+    width: 100%;
+  }
+
+  .menu-btn {
+    right: -45px;
+  }
+}
+.download-btn {
+  padding: 10px 18px;
+  background: #4F81BD;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  
+  margin-bottom: 15px;
+}
