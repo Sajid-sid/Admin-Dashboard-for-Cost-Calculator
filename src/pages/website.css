@@ -1,0 +1,155 @@
+/* ================================
+   PAGE WRAPPER
+================================ */
+.website-page {
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  background: #f5f6f8;
+  min-height: 100vh;
+  color: #333;
+}
+
+.website-page h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* ================================
+   DOWNLOAD BUTTON
+================================ */
+.download-btn {
+  padding: 10px 18px;
+  background: #4F81BD;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  
+  margin-bottom: 15px;
+}
+
+.download-btn:hover {
+  background: #3d6aa1;
+}
+
+/* Responsive table wrapper */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling */
+}
+
+.table-responsive table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px; /* Prevents columns from squeezing too much */
+}
+
+/* Make table clean */
+.table-responsive th,
+.table-responsive td {
+  padding: 10px;
+  border: 1px solid #eee;
+  text-align: left;
+}
+
+.table-responsive thead {
+  background: #4F81BD;
+  color: white;
+}
+
+/* Better mobile spacing */
+@media (max-width: 480px) {
+  .table-responsive table {
+    min-width: 500px;
+  }
+}
+
+/* ================================
+   TABLE CONTAINER
+================================ */
+.table-wrapper {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  overflow-x: auto; /* Mobile scrolling */
+}
+
+/* ================================
+   TABLE STYLING
+================================ */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px; /* helps mobile scroll */
+}
+
+.table thead {
+  background: #4F81BD;
+  color: white;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.table th {
+  font-weight: 600;
+}
+
+.table tr:hover {
+  background: #f5f7fa;
+}
+
+/* Table Details styling */
+.table-details {
+  white-space: pre-wrap;
+  background: #f8f8f8;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+/* =============================
+   RESPONSIVE 
+============================== */
+@media (max-width: 768px) {
+  .website-page {
+    padding: 15px;
+  }
+
+  .website-page h2 {
+    font-size: 20px;
+  }
+
+  .download-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .table-wrapper {
+    padding: 12px;
+  }
+
+  /* table becomes scrollable */
+  .table {
+    min-width: 700px;
+  }
+}
+
+@media (max-width: 480px) {
+  .website-page h2 {
+    font-size: 18px;
+  }
+
+  .table {
+    min-width: 600px;
+  }
+}
